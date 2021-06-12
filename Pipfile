@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+pylint = "==2.8.3"
+pylama = "== 7.7.1"
+
+
+[packages]
+django = "==3.2.4"
+psycopg2 = "==2.8.6"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = false
