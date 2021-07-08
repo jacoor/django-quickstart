@@ -16,6 +16,7 @@ Running the example:
 * update settings for postgreSQL (code below)
 * `docker-compose run web pipenv run manage.py createsuperuser`
 * `docker compose up`
+* `docker-compose run web pipenv run manage.py startapp www` - starts our website project as top level module.
   
 PostgreSQL setup:
 ```code python

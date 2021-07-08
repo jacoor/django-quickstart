@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d48436a9514e14d0c3c77464040a4f4980114f27a384b99528223f47a045a8ee"
+            "sha256": "decaa341c35d8da28e25658a22b2955c387d1c68a51bca26fc794bffc814edf9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,19 +18,19 @@
     "default": {
         "asgiref": {
             "hashes": [
-                "sha256:92906c611ce6c967347bbfea733f13d6313901d54dcca88195eaeb52b2a8e8ee",
-                "sha256:d1216dfbdfb63826470995d31caed36225dcaf34f182e0fa257a4dd9e86f1b78"
+                "sha256:4ef1ab46b484e3c706329cedeff284a5d40824200638503f5768edb6de7d58e9",
+                "sha256:ffc141aa908e6f175673e7b1b3b7af4fdb0ecb738fc5c8b88f69f055c2415214"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==3.3.4"
+            "version": "==3.4.1"
         },
         "django": {
             "hashes": [
-                "sha256:66c9d8db8cc6fe938a28b7887c1596e42d522e27618562517cc8929eb7e7f296",
-                "sha256:ea735cbbbb3b2fba6d4da4784a0043d84c67c92f1fdf15ad6db69900e792c10f"
+                "sha256:3da05fea54fdec2315b54a563d5b59f3b4e2b1e69c3a5841dda35019c01855cd",
+                "sha256:c58b5f19c5ae0afe6d75cbdd7df561e6eb929339985dbbda2565e1cabb19a62e"
             ],
             "index": "pypi",
-            "version": "==3.2.4"
+            "version": "==3.2.5"
         },
         "psycopg2": {
             "hashes": [
@@ -80,11 +80,11 @@
         },
         "isort": {
             "hashes": [
-                "sha256:0a943902919f65c5684ac4e0154b1ad4fac6dcaa5d9f3426b732f1c8b5419be6",
-                "sha256:2bb1680aad211e3c9944dbce1d4ba09a989f04e238296c87fe2139faa26d655d"
+                "sha256:83510593e07e433b77bd5bff0f6f607dbafa06d1a89022616f02d8b699cfcd56",
+                "sha256:8e2c107091cfec7286bc0f68a547d0ba4c094d460b732075b6fba674f1035c0c"
             ],
-            "markers": "python_version >= '3.6' and python_version < '4.0'",
-            "version": "==5.8.0"
+            "markers": "python_version < '4.0' and python_full_version >= '3.6.1'",
+            "version": "==5.9.1"
         },
         "lazy-object-proxy": {
             "hashes": [
