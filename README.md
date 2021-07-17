@@ -32,6 +32,15 @@ DATABASES = {
 }
 
 ```
+
+## Styles
+To generate css use 
+```code shell
+    foundation watch
+```
+in `www/static/www` directory. Important is it needs node 10 and will fail with newer version.
+Now, this actually only needs to be run once, to generate required CSS and js files - other can be created manually, or, using scss if that is desired.
+
  
 More info:
 
