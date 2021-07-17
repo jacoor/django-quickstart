@@ -41,6 +41,9 @@ To generate css use
 in `www/static/www` directory. Important is it needs node 10 and will fail with newer version.
 Now, this actually only needs to be run once, to generate required CSS and js files - other can be created manually, or, using scss if that is desired.
 
+## Migrations
+* `docker-compose run web pipenv run manage.py makemigrations`
+* `docker-compose run web pipenv run manage.py migrate`
  
 More info:
 

@@ -1,8 +1,7 @@
 from django.shortcuts import render
+from .models import Hero
 
 
 def index(request):
-    context = {
-        "message": "Hello from view!",
-    }
+    context = {"heroes": Hero.objects.all()}
     return render(request, "www/index.html", context)
