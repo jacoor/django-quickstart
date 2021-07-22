@@ -53,19 +53,42 @@ class ActiveManager(models.Manager):
         return super().get_queryset().exclude(is_active=False)
 
 
+class FeaturedManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().exclude(is_featured=True)
+
+
+class TopManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().exclude(is_top=True)
+
+
 class Product(DatedContent):
     # https://docs.djangoproject.com/en/3.2/ref/models/fields/#slugfield
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
-    slug = models.SlugField(help_text="used in urls")
     is_active = models.BooleanField(default=True, help_text="allows to hide product")
+    is_featured = models.BooleanField(default=False)
+    is_top = models.BooleanField(default=False)
     name = models.CharField(max_length=255, blank=False)
+    image = models.ImageField(upload_to="www/media/products")
     short_description = models.CharField(max_length=255, blank=True)
     descripion = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    is_featured = models.BooleanField(default=False)
-    is_top = models.BooleanField(default=False)
+    slug = models.SlugField(
+        help_text="leave empty to automatically generate, used in urls"
+    )
 
+    # why this way not get?
+    # managers are django convention.
     active_objects = ActiveManager()
+    featured_objects = FeaturedManager()
+    top_objects = TopManager()
+    # Default manager required when using custom manager - otherwise standard objects call fails.
+    objects = models.Manager()
+
+    @classmethod
+    def get_newest_products(cls):
+        return cls.objects.order_by("-id")[:4]
 
     def __str__(self):
         return self.name

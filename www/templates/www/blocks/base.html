@@ -67,39 +67,16 @@
         {% endblock %}
         {% block main %}
         <br>
+        {% block newest_products_header %}
         <div class="text-center">
-            <h2>Our Newest Products</h2>
+            <h2>Our Newest Products hmm</h2>
             <hr>
         </div>
-        
+        {% endblock %}
         <article class="grid-container">
             {% block main_article %}
-            <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4">
-                <div class="cell">
-                    <img class="thumbnail" src="https://via.placeholder.com/500x600">
-                    <h5>Nulla At Nulla Justo, Eget</h5>
-                    <p>$400</p>
-                    <a href="#" class="button expanded">Buy</a>
-                </div>
-                <div class="cell">
-                    <img class="thumbnail" src="https://via.placeholder.com/500x600">
-                    <h5>Nulla At Nulla Justo, Eget</h5>
-                    <p>$400</p>
-                    <a href="#" class="button expanded">Buy</a>
-                </div>
-                <div class="cell">
-                    <img class="thumbnail" src="https://via.placeholder.com/500x600">
-                    <h5>Nulla At Nulla Justo, Eget</h5>
-                    <p>$400</p>
-                    <a href="#" class="button expanded">Buy</a>
-                </div>
-                <div class="cell">
-                    <img class="thumbnail" src="https://via.placeholder.com/500x600">
-                    <h5>Nulla At Nulla Justo, Eget</h5>
-                    <p>$400</p>
-                    <a href="#" class="button expanded">Buy</a>
-                </div>
-            </div>
+            {% block newest_products_list %}
+            {% endblock %}
             
             <hr>
             
