@@ -53,14 +53,14 @@ class ActiveManager(models.Manager):
         return super().get_queryset().exclude(is_active=False)
 
 
-class FeaturedManager(models.Manager):
+class FeaturedManager(ActiveManager):
     def get_queryset(self):
-        return super().get_queryset().exclude(is_featured=True)
+        return super().get_queryset().exclude(is_featured=False)
 
 
-class TopManager(models.Manager):
+class TopManager(ActiveManager):
     def get_queryset(self):
-        return super().get_queryset().exclude(is_top=True)
+        return super().get_queryset().exclude(is_top=False)
 
 
 class Product(DatedContent):
