@@ -29,10 +29,10 @@
 <div class="grid-x grid-margin-x small-up-2 medium-up-2 large-up-4">
     {% for product in newest_products %}
     <div class="cell">
-        <img class="thumbnail" src="{% adjust product.image 'fill' width=270 height=180 %}">
+        <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image 'fill' width=270 height=180 %}"></a>
         <h5>{{ product.name}}</h5>
         <p>{{ product.price }} </p>
-        <a href="#" class="button expanded">More info (fixme)</a>
+        <a href="{% url 'product' product.id product.slug %}" class="button expanded">More info</a>
     </div>
     {% endfor %}
 </div>
@@ -49,10 +49,10 @@
 <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
     {% for product in featured_products %}
     <div class="cell">
-        <img class="thumbnail" src="{% adjust product.image 'fill' width=170 height=113 %}">
-        <h5>{{ product.name }} </h5>
+        <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image 'fill' width=170 height=113 %}"></a>
+        <h5>{{ product.name|truncatechars:15 }} </h5>
         <p>{{ product.price }}</p>
-        <a href="#" class="button small expanded hollow">More info (fixme)</a>
+        <a href="{% url 'product' product.id product.slug %}" class="button small expanded hollow">More info</a>
     </div>
     {% endfor %}
 </div>
@@ -70,7 +70,7 @@
         {% endif %}
             <div class="media-object">
                 <div class="media-object-section">
-                    <img class="thumbnail" src="{% adjust product.image 'fill' width=100 height=100 %}">
+                    <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image 'fill' width=100 height=100 %}"></a>
                 </div>
                 <div class="media-object-section">
                     <h5>{{ product.name }}</h5>

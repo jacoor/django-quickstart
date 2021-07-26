@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.views.generic import DetailView
+
 from .models import Hero, Footer, Product
 
 
@@ -11,3 +13,8 @@ def index(request):
         "top_products": Product.top_objects.all()[:9],
     }
     return render(request, "www/index.html", context)
+
+
+class ProductView(DetailView):
+    model = Product
+    template_name = "www/product.html"
