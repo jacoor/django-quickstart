@@ -1,8 +1,11 @@
 from django.db import models
 
 # Create your models here.
-from pathlib import Path
-import os
+
+
+class ActiveManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().exclude(is_active=False)
 
 
 class DatedContent(models.Model):
@@ -28,7 +31,17 @@ class Footer(DatedContent, TitledContent):
 
 
 class Article(DatedContent, TitledContent):
+    is_active = models.BooleanField(default=True)
     content = models.TextField()
+    slug = models.SlugField(
+        help_text="leave empty to automatically generate, used in urls"
+    )
+    is_in_footer = models.BooleanField(default=False)
+    is_in_top_menu = models.BooleanField(default=False)
+
+    active_objects = ActiveManager()
+    # Default manager required when using custom manager - otherwise standard objects call fails.
+    objects = models.Manager()
 
 
 class Hero(DatedContent, TitledContent):

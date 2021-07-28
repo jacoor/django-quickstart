@@ -9,7 +9,12 @@ class DateHierarchy(admin.ModelAdmin):
 
 
 class ArticleAdmin(DateHierarchy):
-    pass
+    prepopulated_fields = {"slug": ("title",)}
+    search_fields = [
+        "title",
+    ]
+    list_filter = ["is_in_top_menu", "is_in_footer", "is_active"]
+    list_display = ["title"] + list_filter
 
 
 class FooterAdmin(DateHierarchy):

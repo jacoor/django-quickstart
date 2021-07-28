@@ -67,8 +67,11 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 # support for static and media files
                 "django.template.context_processors.media",
-                "django.template.context_processors.static"
+                "django.template.context_processors.static",
                 # / support for static and media files
+                # custom processor
+                "www.context_processors.custom_context_processor",
+                # / custom processor
             ],
         },
     },
