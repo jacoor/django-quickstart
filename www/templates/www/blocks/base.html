@@ -113,8 +113,8 @@
         {% block js%}
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.js"></script>
-        <script src="{{STATIC_URL}}www/node_modules/foundation-sites/dist/js/foundation.js"></script>
-        <script src="{{STATIC_URL}}www/js/app.js"></script>
+        <script src="{% static "www/node_modules/foundation-sites/dist/js/foundation.js" %}"></script>
+        <script src="{% static "www/js/app.js" %}"></script>
         {% endblock %}
         {% block extrabody %}{% endblock %}
     </body>
