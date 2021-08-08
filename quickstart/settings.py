@@ -28,6 +28,8 @@ SECRET_KEY = "django-insecure-0a*i$my4e28fbrr%mp=l*^ktu_f1=fip2kyj=e!wh9506+vo!%
 DEBUG = False
 # DEBUG = True
 
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+
 # Application definition
 
 PROJECT_APPS = ["www.apps.WwwConfig"]
@@ -53,7 +55,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-
+print("BASE_DIR")
+print(BASE_DIR)
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
