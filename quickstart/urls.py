@@ -23,4 +23,4 @@ urlpatterns = [
     path("", include("www.urls")),  # we want this on top level
     path("daguerre/", include("daguerre.urls")),
 ]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
