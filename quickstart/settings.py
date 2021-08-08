@@ -37,13 +37,12 @@ SECRET_KEY = "django-insecure-0a*i$my4e28fbrr%mp=l*^ktu_f1=fip2kyj=e!wh9506+vo!%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DEBUG = True
+# DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 else:
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
-
 
 # Application definition
 
@@ -70,6 +69,15 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+# production
+STATIC_ROOT = BASE_DIR / "static"
+# STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    BASE_DIR / "static",
+    BASE_DIR / "dg",
+)
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ROOT_URLCONF = "quickstart.urls"
 
@@ -154,16 +162,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# production
-STATIC_URL = "/staticfiles/"
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static"),
-    os.path.join(BASE_DIR, "dg"),
-)
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-X_FRAME_OPTIONS = "SAMEORIGIN"
 
 django_heroku.settings(locals())
 options = DATABASES["default"].get("OPTIONS", {})
