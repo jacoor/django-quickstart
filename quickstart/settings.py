@@ -159,20 +159,21 @@ if os.getcwd() == "/app":
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     DEBUG = False
     # debug heroku
-    if False:
+    if True:
         import logging
+
         LOGGING = {
-            'version': 1,
-            'disable_existing_loggers': False,
-            'handlers': {
-                'console': {
-                    'class': 'logging.StreamHandler',
+            "version": 1,
+            "disable_existing_loggers": False,
+            "handlers": {
+                "console": {
+                    "class": "logging.StreamHandler",
                 },
             },
-            'loggers': {
-                'django': {
-                    'handlers': ['console'],
-                    'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            "loggers": {
+                "django": {
+                    "handlers": ["console"],
+                    "level": os.getenv("DJANGO_LOG_LEVEL", "DEBUG"),
                 },
             },
         }
