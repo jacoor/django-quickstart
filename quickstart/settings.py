@@ -71,7 +71,7 @@ MIDDLEWARE = [
 ]
 # production
 STATIC_ROOT = BASE_DIR / "static"
-# STATIC_URL = "/static/"
+STATIC_URL = "/staticfiles"
 STATICFILES_DIRS = (
     BASE_DIR / "static",
     BASE_DIR / "dg",
