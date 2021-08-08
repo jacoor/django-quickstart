@@ -37,7 +37,7 @@ SECRET_KEY = "django-insecure-0a*i$my4e28fbrr%mp=l*^ktu_f1=fip2kyj=e!wh9506+vo!%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-# DEBUG = True
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
@@ -98,31 +98,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "quickstart.wsgi.application"
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "db",
-        "PORT": 5432,
+if DEBUG:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": "postgres",
+            "USER": "postgres",
+            "PASSWORD": "postgres",
+            "HOST": "db",
+            "PORT": 5432,
+        }
     }
-}
-
-# for production
-DATABASES = {}
-DATABASES["default"] = dj_database_url.config(conn_max_age=600)
+else:
+    # for production
+    DATABASES = {}
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -160,17 +150,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "/static/"
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # production
-STATIC_URL = "/static"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
