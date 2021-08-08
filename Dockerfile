@@ -1,4 +1,4 @@
-FROM python:3.9 
+FROM python:3.9.6 
 ENV TERM=xterm
 ENV PYTHONUNBUFFERED=1
 ENV PATH=$PATH:/www/:/www/.venv/:/www/.venv/bin
@@ -11,5 +11,5 @@ RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     && echo 'source /www/venv/bin/activate' >> ~/.bashrc
 WORKDIR /www
 RUN pip install pipenv
-RUN pipenv --python 3.9
+RUN pipenv --python 3.9.6
 RUN pipenv install
