@@ -158,3 +158,21 @@ if os.getcwd() == "/app":
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     DEBUG = False
+    # debug heroku
+    if False:
+        import logging
+        LOGGING = {
+            'version': 1,
+            'disable_existing_loggers': False,
+            'handlers': {
+                'console': {
+                    'class': 'logging.StreamHandler',
+                },
+            },
+            'loggers': {
+                'django': {
+                    'handlers': ['console'],
+                    'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+                },
+            },
+        }
