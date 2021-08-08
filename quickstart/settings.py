@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 # Application definition
 
-PROJECT_APPS = ["www.apps.WwwConfig"]
+# PROJECT_APPS = ["www.apps.WwwConfig"]
+PROJECT_APPS = ["www"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -58,9 +59,6 @@ MIDDLEWARE = [
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
 
 ROOT_URLCONF = "quickstart.urls"
 
