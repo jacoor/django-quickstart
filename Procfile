@@ -1,2 +1,2 @@
     release: ./heroku-release-tasks.sh
-    web: gunicorn django-quickstart-2021.wsgi --log-file -
+    web: gunicorn quickstart.wsgi --log-file -
