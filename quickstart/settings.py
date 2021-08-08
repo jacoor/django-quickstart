@@ -61,7 +61,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-    "whitenoise.middleware.WhiteNoiseMiddleware",
+    # "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -70,13 +70,14 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 # production
+
 STATIC_ROOT = BASE_DIR / "static"
-STATIC_URL = "/staticfiles"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = (
     BASE_DIR / "static",
     BASE_DIR / "dg",
 )
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ROOT_URLCONF = "quickstart.urls"
@@ -163,6 +164,6 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-django_heroku.settings(locals())
-options = DATABASES["default"].get("OPTIONS", {})
-options.pop("sslmode", None)
+# django_heroku.settings(locals())
+# options = DATABASES["default"].get("OPTIONS", {})
+# options.pop("sslmode", None)
