@@ -16,6 +16,7 @@ gunicorn = "*"
 python-dotenv = "*"
 dj-database-url = "*"
 whitenoise = "*"
+django-daguerre = "*"
 
 [requires]
 python_version = "3.9"
