@@ -160,3 +160,5 @@ if os.getcwd() == "/app":
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     DEBUG = False
+    # yes, this is weird.
+    STATIC_ROOT = "app/static"
