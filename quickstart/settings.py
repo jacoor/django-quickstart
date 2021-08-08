@@ -64,7 +64,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-# production
 
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
@@ -161,4 +160,4 @@ if os.getcwd() == "/app":
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     DEBUG = False
     # yes, this is weird.
-    STATIC_ROOT = "app/static"
+    STATIC_ROOT = "/app/static"
