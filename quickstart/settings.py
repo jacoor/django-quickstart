@@ -151,7 +151,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # heroku
 if os.getcwd() == "/app":
-    print("heroku is on!!!")
     import dj_database_url
 
     db_from_env = dj_database_url.config(conn_max_age=500)
@@ -160,5 +159,3 @@ if os.getcwd() == "/app":
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     DEBUG = False
-    # yes, this is weird.
-    STATIC_ROOT = "/app/static"
