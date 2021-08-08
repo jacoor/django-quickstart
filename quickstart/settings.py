@@ -11,19 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import django_heroku
 import dj_database_url
-import dotenv
 import os
-
-from dotenv import load_dotenv
-
-load_dotenv()
-# # or
-# this could be on local.
-# dotenv_file = os.path.join(BASE_DIR, ".env")
-# if os.path.isfile(dotenv_file):
-# dotenv.load_dotenv(dotenv_file)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,7 +26,7 @@ SECRET_KEY = "django-insecure-0a*i$my4e28fbrr%mp=l*^ktu_f1=fip2kyj=e!wh9506+vo!%
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-DEBUG = True
+# DEBUG = True
 
 # Application definition
 
@@ -157,9 +146,8 @@ if os.getcwd() == "/app":
 
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
-    DEBUG = False
     # debug heroku
-    if True:
+    if DEBUG:
         import logging
 
         LOGGING = {
