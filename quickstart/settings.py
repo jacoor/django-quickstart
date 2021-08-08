@@ -68,7 +68,6 @@ MIDDLEWARE = [
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-X_FRAME_OPTIONS = "SAMEORIGIN"
 
 ROOT_URLCONF = "quickstart.urls"
 
