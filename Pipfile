@@ -7,11 +7,15 @@ name = "pypi"
 pylint = "==2.8.3"
 pylama = "== 7.7.1"
 
-
 [packages]
 django = "==3.2.5"
 psycopg2 = "==2.8.6"
 pillow = "==8.3.1"
+django-heroku = "*"
+gunicorn = "*"
+python-dotenv = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.9"
