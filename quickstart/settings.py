@@ -55,8 +55,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
-print("BASE_DIR")
-print(BASE_DIR)
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 # STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
