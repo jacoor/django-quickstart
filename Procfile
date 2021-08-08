@@ -1,2 +1,2 @@
-    release: python manage.py migrate
-    web: gunicorn DJANGO_PROJECT_NAME.wsgi --log-file -
+    release: ./heroku-release-tasks.sh
+    web: gunicorn django-quickstart-2021.wsgi --log-file -
