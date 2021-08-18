@@ -23,8 +23,8 @@ urlpatterns = [
     path("", include("www.urls")),  # we want this on top level
     path("daguerre/", include("daguerre.urls")),
 ]
-urlpatterns += static(
-    # don't forget, otherwise images missing.
-    settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT,
-)
+# urlpatterns += static(
+#     # don't forget, otherwise images missing.
+#     settings.MEDIA_URL,
+#     document_root=settings.MEDIA_ROOT,
+# )
