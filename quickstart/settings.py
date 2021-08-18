@@ -22,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-0a*i$my4e28fbrr%mp=l*^ktu_f1=fip2kyj=e!wh9506+vo!%"
-
+IS_PRODUCTION = False  # helper
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 if os.getcwd() == "/app":
     DEBUG = False
+    IS_PRODUCTION = True
 # DEBUG = False
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
@@ -143,7 +144,7 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # heroku
-if os.getcwd() == "/app":
+if IS_PRODUCTION:
     import dj_database_url
 
     db_from_env = dj_database_url.config(conn_max_age=500)
