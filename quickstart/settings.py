@@ -39,13 +39,13 @@ ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 PROJECT_APPS = ["www"]
 
 INSTALLED_APPS = [
+    "daguerre",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "daguerre",
 ] + PROJECT_APPS
 
 
