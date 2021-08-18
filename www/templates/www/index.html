@@ -11,7 +11,7 @@
         <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
         {% for hero in heroes %}
         <li class="is-active orbit-slide">
-            <img class="orbit-image" src="{% adjust hero.image 'ratiocrop' ratio='2:1' 'fit'  width=1705 %}" alt="{{hero.title}}">
+            <img class="orbit-image" src="{% adjust hero.image "ratiocrop" ratio="2:1" "fit"  width=1705 %}" alt="{{hero.title}}">
             <figcaption class="orbit-caption">{{hero.title}}</figcaption>
         </li>
         {% endfor %}
@@ -49,7 +49,7 @@
 <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
     {% for product in featured_products %}
     <div class="cell">
-        <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image 'fill' width=170 height=113 %}"></a>
+        <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image "fill" width=170 height=113 %}"></a>
         <h5>{{ product.name|truncatechars:15 }} </h5>
         <p>{{ product.price }}</p>
         <a href="{% url 'product' product.id product.slug %}" class="button small expanded hollow">More info</a>
@@ -70,7 +70,7 @@
         {% endif %}
             <div class="media-object">
                 <div class="media-object-section">
-                    <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image 'fill' width=100 height=100 %}"></a>
+                    <a href="{% url 'product' product.id product.slug %}"><img class="thumbnail" src="{% adjust product.image "fill" width=100 height=100 %}"></a>
                 </div>
                 <div class="media-object-section">
                     <h5>{{ product.name }}</h5>
