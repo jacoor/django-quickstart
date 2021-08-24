@@ -14,12 +14,6 @@ from pathlib import Path
 import dj_database_url
 import os
 
-try:
-    from quickstart.settings_local import *  # noqa: F403
-except ImportError:
-    # there is no settings_local.py on dev or prod.
-    pass
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
@@ -150,6 +144,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+try:
+    from quickstart.settings_local import *  # noqa: F403
+except ImportError:
+    # there is no settings_local.py on dev or prod.
+    pass
+
 
 # heroku
 if IS_PRODUCTION:
@@ -160,7 +160,6 @@ if IS_PRODUCTION:
 
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
-    CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
     # debug heroku
     if DEBUG:
         import logging
