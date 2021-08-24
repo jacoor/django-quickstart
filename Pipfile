@@ -16,6 +16,8 @@ python-dotenv = "*"
 dj-database-url = "*"
 whitenoise = "*"
 django-daguerre = "*"
+django-cloudinary-storage = "*"
+cloudinary = "*"
 
 [requires]
 python_version = "3.9.6"

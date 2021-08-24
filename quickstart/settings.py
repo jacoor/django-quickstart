@@ -14,6 +14,11 @@ from pathlib import Path
 import dj_database_url
 import os
 
+try:
+    from quickstart.settings_local import *  # noqa: F403
+except ImportError:
+    # there is no settings_local.py on dev or prod.
+    pass
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,6 +51,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "cloudinary_storage",
+    "cloudinary",
 ] + PROJECT_APPS
 
 
@@ -63,6 +70,7 @@ MIDDLEWARE = [
 STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static/"
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
 ROOT_URLCONF = "quickstart.urls"
 
@@ -151,7 +159,8 @@ if IS_PRODUCTION:
     DATABASES["default"].update(db_from_env)
 
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
+    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
+    CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
     # debug heroku
     if DEBUG:
         import logging
