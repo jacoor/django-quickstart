@@ -159,7 +159,6 @@ if IS_PRODUCTION:
     DATABASES["default"].update(db_from_env)
 
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    # ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
     ALLOWED_HOSTS = ["django-quickstart-2021.herokuapp.com"]
     # debug heroku
     if DEBUG:
