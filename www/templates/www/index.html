@@ -1,4 +1,5 @@
 {% extends "www/blocks/base.html" %}
+{% load cloudinary %}
 {% load daguerre %}
 
 {% block "site_title"%} Example site {% endblock %}
@@ -11,7 +12,7 @@
         <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
         {% for hero in heroes %}
         <li class="is-active orbit-slide">
-            <img class="orbit-image" src="{% adjust hero.image "ratiocrop" ratio="2:1" "fit"  width=1705 %}" alt="{{hero.title}}">
+            {% cloudinary hero.image class="orbit-image" width="1705" alt=hero.title %}
             <figcaption class="orbit-caption">{{hero.title}}</figcaption>
         </li>
         {% endfor %}

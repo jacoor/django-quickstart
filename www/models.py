@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -45,7 +46,7 @@ class Article(DatedContent, TitledContent):
 
 
 class Hero(DatedContent, TitledContent):
-    image = models.ImageField(upload_to="www/media/hero")
+    image = CloudinaryField("image")
 
 
 # products
@@ -83,7 +84,7 @@ class Product(DatedContent):
     is_featured = models.BooleanField(default=False)
     is_top = models.BooleanField(default=False)
     name = models.CharField(max_length=255, blank=False)
-    image = models.ImageField(upload_to="www/media/products")
+    image = CloudinaryField("image")
     short_description = models.CharField(max_length=255, blank=True)
     descripion = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
