@@ -159,7 +159,7 @@ if IS_PRODUCTION:
     DATABASES["default"].update(db_from_env)
 
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
-    ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS")
+    ALLOWED_HOSTS = list(os.getenv("ALLOWED_HOSTS"))
     # debug heroku
     if DEBUG:
         import logging
