@@ -117,5 +117,7 @@
         <script src="{% static "www/js/app.js" %}"></script>
         {% endblock %}
         {% block extrabody %}{% endblock %}
+        {% cloudinary_includes %}
+        {% cloudinary_js_config %}
     </body>
     </html>
