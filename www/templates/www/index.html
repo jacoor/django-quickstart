@@ -50,7 +50,7 @@
 <div class="grid-x grid-margin-x small-up-2 medium-up-3 large-up-6">
     {% for product in featured_products %}
     <div class="cell">
-        <a href="{% url 'product' product.id product.slug %}">{% cloudinary product.image width=170 height=113 crop="fill" class="thumbnail" %}></a>
+        <a href="{% url 'product' product.id product.slug %}">{% cloudinary product.image width=170 height=113 crop="fill" class="thumbnail" %}</a>
         <h5>{{ product.name|truncatechars:15 }} </h5>
         <p>{{ product.price }}</p>
         <a href="{% url 'product' product.id product.slug %}" class="button small expanded hollow">More info</a>
