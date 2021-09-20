@@ -15,7 +15,6 @@ gunicorn = "*"
 python-dotenv = "*"
 dj-database-url = "*"
 whitenoise = "*"
-django-daguerre = "*"
 django-cloudinary-storage = "*"
 cloudinary = "*"
 

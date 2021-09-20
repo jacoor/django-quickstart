@@ -134,8 +134,5 @@ data/
 # vscode
 .vscode/
 
-# daguerre
-dg/
-
 # local configuration
 settings_local.py
