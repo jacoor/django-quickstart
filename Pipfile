@@ -6,11 +6,12 @@ name = "pypi"
 [dev-packages]
 pylint = "==2.8.3"
 pylama = "== 7.7.1"
-
+pytest = "*"
 
 [packages]
 django = "==3.2.12"
 psycopg2-binary = "==2.8.6"
+pytest = "==7.7.1"
 
 [requires]
 python_version = "3.9"
