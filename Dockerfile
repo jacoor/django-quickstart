@@ -12,4 +12,4 @@ RUN git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
 WORKDIR /www
 RUN pip install pipenv
 RUN pipenv --python 3.9
-RUN pipenv install
+RUN pipenv install --dev
