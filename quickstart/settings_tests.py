@@ -1,0 +1,1 @@
+from quickstart.settings import *  # noqa: F403
