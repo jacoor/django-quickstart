@@ -8,7 +8,7 @@ class Book(models.Model):
     return_date = models.DateField(null=True)
 
     def check_availability(self):
-        if self.return_date is not None and self.return_date > datetime.now():
+        if not self.is_available and self.return_date is not None and self.return_date > datetime.now():
             return f"Book not available. Check again after {self.return_date}"
         if not self.is_available:
             return "Book not available" 

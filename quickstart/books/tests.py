@@ -1,6 +1,5 @@
 from django.test import SimpleTestCase
 from quickstart.books.models import Book
-from freezegun import freeze_time
 
 
 # Create your tests here.
