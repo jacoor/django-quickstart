@@ -1,9 +1,8 @@
 from datetime import datetime
-
-from attr import dataclass
+from django.db.models.query import QuerySet
 from quickstart.books.models import Book
 
-class BookController:
+class BooksController:
 
     def check_availability(self, book: Book) -> str:
         if not book.is_available and book.return_date is not None and book.return_date > datetime.now():
@@ -11,3 +10,6 @@ class BookController:
         if not book.is_available:
             return "Book not available" 
         return "Available"
+
+    def list_available_books(self) -> 'QuerySet[Book]':
+        return Book.objects.filter(is_available=True)
